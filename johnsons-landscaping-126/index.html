@@ -50,6 +50,19 @@
       }
     }
 
+    /* Dark-mode contrast fix: .about and footer sit on var(--forest-deep),
+       which flips to a near-white green (#dcebcf) in dark mode, so their
+       hardcoded near-white text must flip to dark for readability. */
+    @media (prefers-color-scheme: dark) {
+      .about { color: #2c3a22; }
+      .about h2, .fact strong { color: #1d2b12; }
+      .about-copy > p, .fact span { color: #46543c; }
+      .about-copy .signature { color: #4e6f22; }
+      .about-facts { background: rgba(29, 43, 18, .16); }
+      footer { color: #43513a; }
+      .footer-inner a { color: #1d2b12; }
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
